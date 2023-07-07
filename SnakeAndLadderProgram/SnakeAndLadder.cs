@@ -52,6 +52,17 @@ namespace SnakeAndLadderProgram
                             break;
                         }
                 }
+                if (position == MaxPosition)
+                {
+                    Console.WriteLine("The player poisition is " + (position));
+
+                    Console.WriteLine("GameOver");
+                }
+                else if (position > MaxPosition)
+                {
+
+                    Console.WriteLine("The player Remains in poisition  " + position);
+                }
                 if (position < 0)
                 {
                     position = 0;

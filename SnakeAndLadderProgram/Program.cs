@@ -10,8 +10,9 @@ namespace SnakeAndLadderProgram
     {
         static void Main(string[] args)
         {
-            SnakeAndLadder snakeAndLadder = new SnakeAndLadder();
-            snakeAndLadder.RollingDice();
+
+            SnakeAndLadder dice = new SnakeAndLadder();
+            dice.Game();
             Console.ReadLine();
         }
     }

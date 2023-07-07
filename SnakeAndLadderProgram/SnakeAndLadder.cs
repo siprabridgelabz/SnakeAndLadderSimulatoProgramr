@@ -8,69 +8,40 @@ namespace SnakeAndLadderProgram
 {
     public class SnakeAndLadder
     {
-        public const int CaseOfNoPlay = 0;
-        public const int CaseOfLadder = 1;
-        public const int CaseOfSnake = 2;
-        public const int MaxPosition = 100;
-
-        public void RollingDice()
-        {
-           
-            Console.WriteLine("Single player at starting position 0");
-            Console.WriteLine(" ");
-            int position = 0;
-            while (position != MaxPosition)
+            public void Game()
             {
-                Random random = new Random();
-                int RollDice = random.Next(1, 6);
-                Console.WriteLine("Player rolls the die and get: " + RollDice);
-                Random random1 = new Random();
-                int option = random1.Next(3);
+                int start_position = 0;
+                int position = 0;
+                int Count = 0;
+                int Winning_Position = 100;
 
-                switch (option)
+                while (position < Winning_Position)
                 {
-                    case CaseOfNoPlay:
-                        {
-                            Console.WriteLine("Option NO PLAY selected " + position);
-                            Console.WriteLine("Player stey at same postion");
-                            break;
-                        }
+                    Random random = new Random();
+                    int dice = random.Next(1, 7);
 
-                    case CaseOfLadder:
-                        {
-                            Console.WriteLine("Option LADDER selected " + position);
-                            Console.WriteLine("Player move ahead " + RollDice);
-                            position = RollDice + position;
-                            break;
-                        }
+                    Console.WriteLine("The dice rolled to " + dice);
+                    position += dice;
+                    Console.WriteLine("Position of the player = " + position);
+                    if (position == Winning_Position)
+                    {
+                        Console.WriteLine("The player poisition is " + (position));
 
-                    case CaseOfSnake:
-                        {
-                            Console.WriteLine("Option SNAKE is selected " + (RollDice + position));
-                            Console.WriteLine("Player move behind by " + RollDice);
-                            position = position - RollDice;
-                            break;
-                        }
-                }
-                if (position == MaxPosition)
-                {
-                    Console.WriteLine("The player poisition is " + (position));
+                        Console.WriteLine("GameOver");
+                    }
 
-                    Console.WriteLine("GameOver");
-                }
-                else if (position > MaxPosition)
-                {
+                    else if (position > Winning_Position)
+                    {
 
-                    Console.WriteLine("The player Remains in poisition  " + position);
+                        Console.WriteLine("The player Remains in poisition  " + start_position);
+                    }
+                    Count++;
+
+
                 }
-                if (position < 0)
-                {
-                    position = 0;
-                    Console.WriteLine("Player have to restart from position " + position);
-                }
-                Console.WriteLine("Current position of player is " + position);
-                Console.WriteLine(" ");
+                Console.WriteLine("The number of times the Dice Rolled = " + Count);
+
             }
-        }
+        
     }
 }

@@ -11,8 +11,10 @@ namespace SnakeAndLadderProgram
         public void RollingDice()
         {
             Console.WriteLine("Start the Snake and Ladder Game");
-            int position = 0;
             Console.WriteLine("Single player at start Position 0");
+            Random random = new Random();
+            int RollDice = random.Next(1, 6);
+            Console.WriteLine("Player rolls the dice and get: " + RollDice);
         }
     }
 }
